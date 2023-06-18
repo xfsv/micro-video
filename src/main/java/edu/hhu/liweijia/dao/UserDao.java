@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserDao {
 
@@ -43,17 +45,18 @@ public class UserDao {
         }
     }
 
-    public User queryById(int id) {
-        String sql=" select id,nick_name nickName,account,password "+
-                " from t_user " +
-                " where id=? ";
-        User user = null;
+    public void update(User user, Video video, Date date){
+        String sql = " insert into  t_history(video_name,video_id,user_name,user_id,time)" +
+                "values(?,?,?,?,?) ";
+        Object[] paramArray = new Object[]{
+                video.getName(),video.getId(),user.getNickname(),user.getId(),date
+        };
         try {
-            user = queryRunner.query(sql,new BeanHandler<>(User.class),id);
+            queryRunner.update(sql,paramArray);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return user;
     }
+
 
 }

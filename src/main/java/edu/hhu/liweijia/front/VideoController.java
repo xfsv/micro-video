@@ -70,11 +70,15 @@ public class VideoController extends HttpServlet{
         Video video = videoDao.queryById(id);
 //        user = userDao.queryById();
 
-//        Object username = request.getSession().getAttribute("user");
+        User user = (User)request.getSession().getAttribute("user");
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date(System.currentTimeMillis());
+        System.out.println(formatter.format(date));
 //        System.out.println((String) username);
+        userDao.update(user,video,date);
 
         request.setAttribute("video",video);
-//        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd");
+
 
         request.getRequestDispatcher("/front/video_show.jsp").forward(request,response);
     }
