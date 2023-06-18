@@ -14,10 +14,12 @@
         <div class = "container">
             <jsp:include page="/front/top3.jsp"></jsp:include>
             <jsp:include page="/front/top2.jsp"></jsp:include>
+
             <div class="row" style="margin-top: 10px">
-<%--                <div class="col-md-3">--%>
-<%--                    <jsp:include page="/front/menu.jsp"></jsp:include>--%>
-<%--                </div>--%>
+                <div class="col-md-3">
+                    <jsp:include page="/front/menu.jsp"></jsp:include>
+                </div>
+
                 <div class="col-md-9">
                     <div>
                         当前位置：用户界面>>视频列表

@@ -29,14 +29,14 @@
             <div class="form-group">
                 <label for="account" class="col-md-4 control-label">账号:</label>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" id="account" name="account" placeholder="请输入账号">
+                    <input type="text" class="form-control" id="account" name="account" placeholder="请输入账号" value="user">
                     <input type="hidden" name="method" value="login">
                 </div>
             </div>
             <div class="form-group">
                 <label for="password" class="col-md-4 control-label">密码:</label>
                 <div class="col-md-4">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码" value="123456">
                 </div>
             </div>
 

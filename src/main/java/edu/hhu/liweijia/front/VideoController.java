@@ -1,5 +1,6 @@
 package edu.hhu.liweijia.front;
 
+import edu.hhu.liweijia.dao.HistoryDao;
 import edu.hhu.liweijia.dao.UserDao;
 import edu.hhu.liweijia.dao.VideoDao;
 import edu.hhu.liweijia.dao.VideoTypeDao;
@@ -26,6 +27,7 @@ public class VideoController extends HttpServlet{
     private VideoDao videoDao = new VideoDao();
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private UserDao userDao = new UserDao();
+    private HistoryDao historyDao = new HistoryDao();
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -68,18 +70,14 @@ public class VideoController extends HttpServlet{
     protected void toShow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Video video = videoDao.queryById(id);
-//        user = userDao.queryById();
 
         User user = (User)request.getSession().getAttribute("user");
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date(System.currentTimeMillis());
         System.out.println(formatter.format(date));
-//        System.out.println((String) username);
-        userDao.update(user,video,date);
 
+        historyDao.update(user,video,date);
         request.setAttribute("video",video);
-
-
         request.getRequestDispatcher("/front/video_show.jsp").forward(request,response);
     }
 

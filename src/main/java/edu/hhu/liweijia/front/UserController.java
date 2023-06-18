@@ -34,6 +34,7 @@ public class UserController extends HttpServlet {
         if(method.equals("signIn")){
             signIn(request,response);
         }
+
     }
 
     protected void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

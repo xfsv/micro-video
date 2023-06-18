@@ -76,6 +76,8 @@ create table t_history(
                        video_name varchar(32),
                        user_id int,
                        user_name varchar(32),
-                       watch_date date
+                       watch_date date,
+                       image_path varchar(128),
+                       video_path varchar(128)
 )charset=utf8;
 

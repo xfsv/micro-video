@@ -21,7 +21,7 @@
 </head>
     <body>
         <div class = "container" style="height: 100px;background-color: #2aabd2; text-align: center;font-size: 30px">
-            用户界面
+            管理员界面
         </div>
     </body>
 </html>

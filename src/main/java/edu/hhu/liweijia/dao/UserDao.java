@@ -45,18 +45,4 @@ public class UserDao {
         }
     }
 
-    public void update(User user, Video video, Date date){
-        String sql = " insert into  t_history(video_name,video_id,user_name,user_id,time)" +
-                "values(?,?,?,?,?) ";
-        Object[] paramArray = new Object[]{
-                video.getName(),video.getId(),user.getNickname(),user.getId(),date
-        };
-        try {
-            queryRunner.update(sql,paramArray);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
 }
