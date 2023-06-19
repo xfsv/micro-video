@@ -23,7 +23,7 @@
         <div class = "container" style="margin-top:10px">
             <div class="row">
                 <div class="col-md-6" style="text-align: left">
-                    欢迎你，${sessionScope.user.nickname}!
+                    欢迎你，${sessionScope.user.nickName}!
                 </div>
                 <div class="col-md-6" style="text-align: right">
                     <a href="/front/user?method=logout" onclick="return confirm('确定注销吗')">注销</a>

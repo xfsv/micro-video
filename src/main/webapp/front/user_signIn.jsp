@@ -20,6 +20,16 @@
     <script src="/js/jquery-3.6.0.js"></script>
     <!-- 导入Bootstrap的js文件 -->
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+        function check() {
+            if (password.value != password2.value) {
+                alert("两次输入密码不一致")
+                password.value = "";
+                password2.value = "";
+            }
+        }
+    </script>
+
 </head>
 <body>
 <div class = "container">
@@ -58,8 +68,8 @@
                     <div class="form-group">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <input class="btn btn-success" type="submit" value="注册">
-                            <input class="btn btn-info" type="button" value="返回" onclick="history.back()">
+                            <input class="btn btn-success" type="submit" value="注册" οnblur=“check()”>
+                            <a href="/front/login.jsp" class="btn btn-success">返回</a>
                         </div>
                     </div>
                 </form>
@@ -68,4 +78,26 @@
     </div>
 </div>
 </body>
+<%--<script type="text/javascript">--%>
+<%--    $(function () {--%>
+<%--        $("#password").blur(function(){--%>
+<%--            $("#password").empty();--%>
+<%--            var password = $(this).val();--%>
+<%--            if(password==""|| password==null){--%>
+<%--                $("#password").after("<span id='password' style='color: red'>密码不能为空</span>");--%>
+<%--            }--%>
+<%--        });--%>
+<%--        $("#rePassword").blur(function(){--%>
+<%--            $("#rePassword").empty();--%>
+<%--            var rePassword = $(this).val();--%>
+<%--            var password=$("#password").val();--%>
+<%--            if(rePassword==""|| rePassword==null){--%>
+<%--                $("#rePassword").after("<span id='password' style='color: red'>请确认密码</span>");--%>
+<%--            }--%>
+<%--            if(rePassword!=password){--%>
+<%--                $("#rePassword").after("<span id='password2' style='color: red'>两次密码不匹配,请重新输入!</span>");--%>
+<%--            }--%>
+<%--        });--%>
+<%--    });--%>
+<%--</script>--%>
 </html>

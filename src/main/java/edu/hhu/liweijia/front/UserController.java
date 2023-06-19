@@ -72,11 +72,16 @@ public class UserController extends HttpServlet {
         String password = request.getParameter("password");
 
         User user = new User();
-        user.setNickname(name);
+        user.setNickName(name);
         user.setAccount(account);
         user.setPassword(password);
-        userDao.add(user);
-        //重新将页面跳转到视频类型列表页面
-        response.sendRedirect("/front/login.jsp");
+        User temp = userDao.queryByNameOrAccount(name, account);
+        if(temp == null){
+            userDao.add(user);
+            response.sendRedirect("/front/login.jsp");
+        } else {
+            response.sendRedirect("/front/sign_fail.jsp");
+        }
+
     }
 }

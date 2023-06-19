@@ -55,7 +55,6 @@ public class HistoryController extends HttpServlet{
 
     protected void remove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        System.out.println(id);
         historyDao.remove(id);
         response.sendRedirect("/front/history?method=historyList");
     }

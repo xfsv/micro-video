@@ -12,7 +12,7 @@ public class History {
     private String videoName;
     private int userId;
     private String userName;
-    private Date time;
+    private Date watchTime;
     private String imagePath;
     private String videoPath;
 }
